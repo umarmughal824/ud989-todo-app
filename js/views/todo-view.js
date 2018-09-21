@@ -80,7 +80,7 @@ var app = app || {};
 
 		// Switch this view into `"priority mode"`
 		prioritize: function () {
-			this.$el.addClass('priority');
+			this.$el.toggleClass('priority');
 			this.$input.focus();
 		},
 
