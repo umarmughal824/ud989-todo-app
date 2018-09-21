@@ -23,7 +23,8 @@ var app = app || {};
 			'click .destroy': 'clear',
 			'keypress .edit': 'updateOnEnter',
 			'keydown .edit': 'revertOnEscape',
-			'blur .edit': 'close'
+			'blur .edit': 'close',
+			'click .priority-btn': 'prioritize'
 		},
 
 		// The TodoView listens for changes to its model, re-rendering. Since
@@ -74,6 +75,12 @@ var app = app || {};
 		// Switch this view into `"editing"` mode, displaying the input field.
 		edit: function () {
 			this.$el.addClass('editing');
+			this.$input.focus();
+		},
+
+		// Switch this view into `"priority mode"`
+		prioritize: function () {
+			this.$el.addClass('priority');
 			this.$input.focus();
 		},
 
